@@ -23,7 +23,7 @@ const Hero = () => {
             sequence={[
               "Fullstack Dev",1000,
               "Webdesigner",1000,
-              "Consultapt",1000
+              "Consultant",1000
             ]}
             speed={50}
             repeat={Infinity}

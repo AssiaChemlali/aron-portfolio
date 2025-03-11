@@ -6,21 +6,21 @@ const Contact = () => {
   return (
     <div className='px-6 max-w-[1000px] mx-auto md:my-12' id="contact">
        <Revial>
-          <div className="grid md:grid-cols-2 place-items-end">
+          <div className="grid md:grid-cols-2 place-items-start">
             <div >
               <div className='text-gray-300 my-3'>
-                <h3 className='text-4xl font-semibold mb-5'>about <span>me</span> </h3>
-                <p className='text-justify leading-7 w-11/12 mx-auto'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptas quibusdam sunt impedit dolorem molestias qui praesentium, reprehenderit labore. Optio.</p>
+                <h3 className='text-4xl font-semibold mb-5'>About <span>Me</span> </h3>
+                <p className='text-left leading-7  mx-auto'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptas quibusdam sunt impedit dolorem molestias qui praesentium, reprehenderit labore. Optio.</p>
               </div>
 
-              <div className="flex mt-10 items-center gap-7">
+              <div className="flex mt-10 items-center gap-7 capitalize">
 
                 <div className='bg-gray-800/40 p-5 rounded-lg '>
                   <h3 className='md:text-4xl text-2xl font-semibold text-white'>11
                     <span>+</span>
                   </h3>
                   <p className='text-xs md:text-base'>
-                    <span>Projects</span>
+                    <span>Projects done</span>
                   </p>
                 </div>
 

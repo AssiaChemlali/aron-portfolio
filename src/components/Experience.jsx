@@ -27,12 +27,13 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <div className='p-8 max-w-[600px] mx-auto'>
+    <div className='p-8 max-w-[600px] mx-auto '>
       <h1 className='text-4xl text-gray-200 font-bold text-center mb-12'>Experience</h1>
       <motion.div 
-      className='space-y-8'
+      className='space-y-8 flex flex-col items-center'
       initial="hidden"
       animate="visible"
+      
       >
         {
           experiences.map((experience,index)=>(

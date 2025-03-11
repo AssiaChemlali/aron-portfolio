@@ -34,11 +34,11 @@ const Navbar = () => {
   }
 
   return (
-    <div className='fixed top-0 left-0 w-full bg-opacity-70 backdrop-blur-md z-50'>
-        <div className="max-w-[1300px] mx-auto bg-green-200 FLEX justify-between text-gray-500 text-xl items-center px-12 h-20">
+    <div className='fixed top-0 left-0 w-full bg-[#190b1f] md:bg-transparent bg-opacity-90 backdrop-blur-md z-50 '>
+        <div className="max-w-[1300px] mx-auto  flex justify-between text-gray-100 text-xl items-center px-12 h-20">
           <a href="#">J.Doe</a>
 
-          <ul className='hidden md:flex gap-12 z-10 cursor-pointer'>
+          <ul className='hidden md:flex gap-12 z-10 cursor-pointer '>
             <li>
               <Link to="skills" smooth={true} offset={50} duration={500}>About</Link>
             </li>
@@ -49,6 +49,7 @@ const Navbar = () => {
               <Link to="contact" smooth={true} offset={50} duration={500}>Contact</Link>
             </li>
           </ul>
+          {/* desktop menu */}
 
             <div className="md:hidden z-50 text-gray-200"       
             onClick={toggleNav}>
@@ -58,13 +59,14 @@ const Navbar = () => {
               }
           </div>
 
+           {/* mobile menu */}
           <motion.div
           initial={false}
           animate={nav ? 'open':'closed'}
           variants={menuVariants}
           className='fixed left-0 top-0 w-full min-h-screen  z-40'
           >
-              <ul className="font-semibold text-4xl space-y-8 mt-24 text-center">
+              <ul className="font-semibold text-4xl space-y-8 mt-20  py-5 text-center  bg-[#190b1f] bg-opacity-90 backdrop-blur-md z-50">
                 <li>
                 <Link to="skills" onClick={closeNav} smooth={true} offset={50} duration={500}>About</Link>
               </li>
