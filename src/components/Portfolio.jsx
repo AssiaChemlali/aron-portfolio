@@ -6,6 +6,7 @@ import project5 from "../assets/5.png"
 import project3 from "../assets/3.png"
 import { AiFillGithub, AiOutlineGithub } from 'react-icons/ai'
 import { div } from 'motion/react-client'
+import Revial from './Revial'
 
 const projects = [
   {
@@ -57,8 +58,9 @@ const projects = [
 const Portfolio = () => {
   return (
     <div className="max-x-[1000px] mx-auto p-6 md:my-20" id="portfolio">
-      <h2>Portfolio</h2>
+      <h2 className='text-3xl font-bold text-gray-200 mb-8'>Portfolio</h2>
       {projects.map((project,index)=>(
+        <Revial>
          <div key={index} className={`flex flex-col md:flex-row ${index !==0 ? 'md:flex-row-reverse':'' } mb-12`}>
           <div className="w-full md:1/2 p-4">
             <img 
@@ -80,6 +82,7 @@ const Portfolio = () => {
             </div>
           </div>
          </div>
+         </Revial>
       ))}
       
     </div>
