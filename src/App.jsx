@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -13,13 +11,17 @@ function App() {
 
   return (
     <>
-    <Navbar/>
-    <Hero/>
-    <Skills/>
-    <Portfolio/>
-    <Experience/>
-    <Contact/>
-    <Footer/>
+    <div class="fixed  -z-10  min-h-screen w-full items-center px-4 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
+
+      <main className='flex flex-col items-center px-4 md:px-8 lg:px-16 '>
+      <Navbar/>
+      <Hero/>
+      <Skills/>
+      <Portfolio/>
+      <Experience/>
+      <Contact/>
+      <Footer/>
+      </main>
     </>
   )
 }

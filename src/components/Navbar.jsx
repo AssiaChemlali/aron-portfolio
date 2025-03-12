@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 import { AiOutlineMenu,AiOutlineClose } from 'react-icons/ai'
 import{Link} from "react-scroll"
 import {motion} from 'framer-motion'
-
+import {links, socialLinks} from '../data/dummy'
+import {AiOutlineGithub, AiOutlineInstagram,AiOutlineLinkedin} from 'react-icons/ai'
 const Navbar = () => {
   const [nav,setNav]=useState(false)
 
@@ -35,19 +36,27 @@ const Navbar = () => {
 
   return (
     <div className='fixed top-0 left-0 w-full bg-[#190b1f] md:bg-transparent bg-opacity-90 backdrop-blur-md z-50 '>
-        <div className="max-w-[1300px] mx-auto  flex justify-between text-gray-100 text-xl items-center px-12 h-20">
-          <a href="#">Aaron</a>
+        <div className="max-w-[1300px] mx-auto  flex justify-between text-gray-300 text-xl items-center px-12 h-20 ">
+          <Link to="." className='text-xl font-bold text-purple-500'>Aaron</Link>
            {/* desktop menu */}
           <ul className='hidden md:flex gap-12 z-10 cursor-pointer text-base '>
-            <li>
-              <Link to="skills" smooth={true} offset={50} duration={500}>About</Link>
-            </li>
-            <li>
-              <Link to="portfolio" smooth={true} offset={50} duration={500}>Portfolio </Link>
-            </li>
-            <li>
-              <Link to="contact" smooth={true} offset={50} duration={500}>Contact</Link>
-            </li>
+            {
+              links.map((link,index)=>{
+                return(
+                  <li key={index}>
+                    <Link 
+                      to={link.href} 
+                      smooth={true} 
+                      offset={50} 
+                      duration={500} className='hover:text-white transition-all'>
+                        {link.label}
+                    </Link>
+                 </li>
+                )
+              })
+            }
+            
+          
           </ul>
          
 
@@ -67,20 +76,42 @@ const Navbar = () => {
           className='fixed left-0 top-0 w-full min-h-screen  z-40'
           >
           <ul className="font-semibold text-4xl space-y-8 mt-20  py-5 text-center  bg-[#190b1f] bg-opacity-90 backdrop-blur-md z-50">
-            <li>
-            <Link to="skills" onClick={closeNav} smooth={true} offset={50} duration={500}>About</Link>
-          </li>
-          <li>
-            <Link to="portfolio" onClick={closeNav} smooth={true} offset={50} duration={500}>Portfolio </Link>
-          </li>
-          <li>
-            <Link to="contact" onClick={closeNav} smooth={true} offset={50} duration={500}>Contact</Link>
-          </li>
+
+          {
+              links.map((link,index)=>{
+                return(
+                  <li key={index}>
+                    <Link 
+                      to={link.href} 
+                      onClick={closeNav}
+                      smooth={true} 
+                      offset={50} 
+                      duration={500} className='hover:text-white transition-all'>
+                        {link.label}
+                    </Link>
+                 </li>
+                )
+              })}
+           
             
           </ul>   
           </motion.div>
 
-        
+          <div className="flex gap-3 flex-row text-xl  text-gray-400 z-20 ">
+            {
+              socialLinks.map((socialLink,index)=>{
+                return(
+                  <motion.a  key={index}
+                    className='hover:text-purple-500'
+                    href={socialLink.href} 
+                    whileHover={{scale:1.2}}>
+                    {socialLink.icon}
+                  </motion.a>
+                )
+              })
+            }
+          </div>
+
       </div>
     </div>
   )

@@ -11,7 +11,6 @@ const Revial = ( {children,width="fit-content"}) => {
       mainControls.start('visible')
     }
   },[inInView,mainControls])
-  
   return (
     <div  ref={ref} style={{position:"relative",width,overflow:"hidden"}}>
       <motion.div  

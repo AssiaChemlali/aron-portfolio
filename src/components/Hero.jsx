@@ -2,15 +2,22 @@ import React from 'react'
 
 import profilePic from "../assets/image.jpg"
 import {TypeAnimation} from "react-type-animation"
-import ShinyEffect from './ShinyEffect'
 import {AiOutlineGithub, AiOutlineInstagram,AiOutlineLinkedin} from 'react-icons/ai'
-import { DiCss3,DiHtml5,DiJavascript1,DiNodejsSmall,DiReact} from 'react-icons/di'
+
 
 import { motion } from 'motion/react'
 const Hero = () => {
   return (
     <div className='mt-24 max-w-[1200px] mx-auto relative h-screen'>
-      <div className="flex flex-col items-center justify-center gap-8">
+      <motion.div 
+      variants={{
+        hidden:{opacity:0,y:-75},
+        visible:{opacity:1,y:0}
+      }}
+      initial="hidden"
+      animate="visible"
+      transition={{duration:1}}
+      className="flex flex-col items-center justify-center gap-8">
         {/* PROFILE */}
       <motion.img 
       src={profilePic}
@@ -36,7 +43,7 @@ const Hero = () => {
           whileInView={{opacity:1}}
           viewport={{once:true}}
           transition={{duration:1,delay:0.5}}
-          className='text-purple-500 md:text-7xl text-5xl tracking-tight mb-4 capitalize '
+          className='text-purple-500 font-bold  md:text-7xl text-5xl tracking-tight mb-4 capitalize '
           >
            Aaron storm
           </motion.p>
@@ -49,7 +56,7 @@ const Hero = () => {
             ]}
             speed={50}
             repeat={Infinity}
-            className='font-semibold text-gray-200 text-base md:text-2xl'
+            className='font-semibold text-gray-200 text-lg md:text-2xl'
           />
          
 
@@ -73,28 +80,17 @@ const Hero = () => {
            >
           <motion.button 
           className='z-10 cursor-pointer font-bold text-gray-200 md:w-auto p-4 border border-purple-400 rounded-xl'
+          whileTap={{scale:0.9}}
           whileHover={{scale:1.05,boxShadow:"0px 0px 8px rgba(0,0,0,0.3)"}}>
             Download CV
           </motion.button>
 
-          <div className="flex gap-6 flex-row text-2xl md:text-4xl text-purple-400 z-20">
-            <motion.a href="#" whileHover={{scale:1.2}}>
-              <AiOutlineGithub/>
-            </motion.a>
-
-            <motion.a href="#" whileHover={{scale:1.2}}>
-              <AiOutlineLinkedin/>
-            </motion.a>
-
-            <motion.a href="#" whileHover={{scale:1.2}}>
-              <AiOutlineInstagram/>
-            </motion.a>
-          </div>
+      
 
            </motion.div>
       </motion.div>
      
-      </div>
+      </motion.div>
 
     
 
