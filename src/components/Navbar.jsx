@@ -4,7 +4,7 @@ import { AiOutlineMenu,AiOutlineClose } from 'react-icons/ai'
 import{Link} from "react-scroll"
 import {motion} from 'framer-motion'
 import {links, socialLinks} from '../data/dummy'
-import {AiOutlineGithub, AiOutlineInstagram,AiOutlineLinkedin} from 'react-icons/ai'
+
 const Navbar = () => {
   const [nav,setNav]=useState(false)
 
@@ -35,11 +35,14 @@ const Navbar = () => {
   }
 
   return (
-    <div className='fixed top-0 left-0 w-full bg-[#190b1f] md:bg-transparent bg-opacity-90 backdrop-blur-md z-50 '>
+    <div className='fixed top-0 left-0 w-full md:bg-transparent bg-opacity-90 backdrop-blur-md z-50 '>
         <div className="max-w-[1300px] mx-auto  flex justify-between text-gray-300 text-xl items-center px-12 h-20 ">
-          <Link to="." className='text-xl font-bold text-purple-500'>Aaron</Link>
+
+          {/* logo */}
+          <Link to="." className='text-xl font-bold text-transparent bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text opacity-80 hover:opacity-100'>Aaron</Link>
+
            {/* desktop menu */}
-          <ul className='hidden md:flex gap-12 z-10 cursor-pointer text-base '>
+          <ul className='hidden md:flex gap-10 z-10 cursor-pointer text-base '>
             {
               links.map((link,index)=>{
                 return(
@@ -48,7 +51,7 @@ const Navbar = () => {
                       to={link.href} 
                       smooth={true} 
                       offset={50} 
-                      duration={500} className='hover:text-white transition-all'>
+                      duration={500} className='hover:text-white transition-all duration-300'>
                         {link.label}
                     </Link>
                  </li>
@@ -59,7 +62,7 @@ const Navbar = () => {
           
           </ul>
          
-
+          {/* toogle button */}
           <div className="md:hidden z-50 text-gray-200"       
             onClick={toggleNav}>
               {nav ? 
@@ -97,12 +100,13 @@ const Navbar = () => {
           </ul>   
           </motion.div>
 
-          <div className="flex gap-3 flex-row text-xl  text-gray-400 z-20 ">
+          {/* social icons */}
+          <div className="hidden md:flex gap-3 flex-row  z-20 ">
             {
               socialLinks.map((socialLink,index)=>{
                 return(
                   <motion.a  key={index}
-                    className='hover:text-purple-500'
+                    className='text-xl  text-gray-400 hover:text-purple-500'
                     href={socialLink.href} 
                     whileHover={{scale:1.2}}>
                     {socialLink.icon}
