@@ -5,7 +5,7 @@ import project4 from "../assets/4.png"
 import project5 from "../assets/5.png"
 import project3 from "../assets/3.png"
 import { AiFillGithub, AiOutlineGithub } from 'react-icons/ai'
-import { div } from 'motion/react-client'
+
 import Revial from './Revial'
 
 const projects = [
