@@ -1,36 +1,30 @@
 import React from 'react'
-
 import profilePic from "../assets/image.jpg"
 import {TypeAnimation} from "react-type-animation"
-import {AiOutlineGithub, AiOutlineInstagram,AiOutlineLinkedin} from 'react-icons/ai'
-
-
 import { motion } from 'motion/react'
+
 const Hero = () => {
   return (
     <div className='mt-24 max-w-[1200px] mx-auto relative h-screen'>
       <motion.div 
-      variants={{
-        hidden:{opacity:0,y:-75},
-        visible:{opacity:1,y:0}
-      }}
-      initial="hidden"
-      animate="visible"
+  
+      initial={{opacity:0,y:-75}}
+      animate={{opacity:1,y:0}}
       transition={{duration:1}}
       className="flex flex-col items-center justify-center gap-8">
         {/* PROFILE */}
-      <motion.img 
-      src={profilePic}
-      className='w-[300px] md:w-[300px] rounded-full shadow-lg  shadow-purple-800 mt-10'
-      initial={{opacity:0,scale:0.8}}
-      whileInView={{opacity:1,scale:1}}
-      viewport={{once:true}}
-      whileHover={{scale:1.1}}
-      transition={{duration:1}}
-      
-      />
+        <motion.img 
+        src={profilePic}
+        className='w-[300px] md:w-[350px] rounded-full shadow-xl  shadow-indigo-800 mt-10'
+        initial={{opacity:0,scale:0.8}}
+        whileInView={{opacity:1,scale:1}}
+        viewport={{once:true}}
+        whileHover={{scale:1.1}}
+        transition={{duration:1}}
+        
+        />
 
-      {/* CONTENT */}
+        {/* CONTENT */}
         <motion.div
            initial={{opacity:0,y:-50}}
            whileInView={{opacity:1,y:0}}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import { AiOutlineMenu,AiOutlineClose } from 'react-icons/ai'
-import{Link} from "react-scroll"
+import { Link } from 'react-scroll'
 import {motion} from 'framer-motion'
 import {links, socialLinks} from '../data/dummy'
 
@@ -50,8 +50,9 @@ const Navbar = () => {
                     <Link 
                       to={link.href} 
                       smooth={true} 
-                      offset={50} 
-                      duration={500} className='hover:text-white transition-all duration-300'>
+                      // offset={50} 
+                      duration={500} 
+                      className='hover:text-white transition-all duration-300'>
                         {link.label}
                     </Link>
                  </li>

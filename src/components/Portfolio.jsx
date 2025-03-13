@@ -1,63 +1,13 @@
 import React from 'react'
-import project1 from "../assets/1.png"
-import project2 from "../assets/2.png"
-import project4 from "../assets/4.png"
-import project5 from "../assets/5.png"
-import project3 from "../assets/3.png"
+
 import { AiFillGithub, AiOutlineGithub } from 'react-icons/ai'
 
 import Revial from './Revial'
+import { projects } from '../data/dummy'
 
-const projects = [
-  {
-    img: project1,
-    title: "Project #1",
-    description: "UI for frontend development using React.",
-    links: {
-      site: "#",
-      github: "#",
-    },
-  },
-  {
-    img: project2,
-    title: "Project #2",
-    description: "A fullstack application built with Node.js and MongoDB.",
-    links: {
-      site: "#",
-      github: "#",
-    },
-  },
-  {
-    img: project4,
-    title: "Project #3",
-    description: "An e-commerce platform with various features.",
-    links: {
-      site: "#",
-      github: "#",
-    },
-  },
-  {
-    img: project5,
-    title: "Project #4",
-    description: "A mobile-friendly application using React Native.",
-    links: {
-      site: "#",
-      github: "#",
-    },
-  },
-  {
-    img: project3,
-    title: "Project #5",
-    description: "A data visualization project using D3.js and other libraries.",
-    links: {
-      site: "#",
-      github: "#",
-    },
-  },
-]
 const Portfolio = () => {
   return (
-    <div className="max-w-[1000px] mx-auto p-6 md:my-20" id="portfolio">
+    <div className="max-w-[1000px] mx-auto p-6 md:my-20" name="portfolio">
       <h2 className='text-3xl font-bold text-gray-200 mb-8 text-center'>Portfolio</h2>
       {projects.map((project,index)=>(
         <Revial>

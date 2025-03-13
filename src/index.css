@@ -4,6 +4,7 @@
 @tailwind utilities;
 *{
   font-family: "Space Grotesk", sans-serif;
+  scroll-behavior: smooth;
 }
 
 
