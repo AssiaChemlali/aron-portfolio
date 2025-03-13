@@ -21,7 +21,7 @@ const Hero = () => {
         {/* PROFILE */}
       <motion.img 
       src={profilePic}
-      className='w-[300px] md:w-[300px] rounded-full shadow-lg  shadow-purple-800'
+      className='w-[300px] md:w-[300px] rounded-full shadow-lg  shadow-purple-800 mt-10'
       initial={{opacity:0,scale:0.8}}
       whileInView={{opacity:1,scale:1}}
       viewport={{once:true}}

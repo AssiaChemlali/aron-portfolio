@@ -36,10 +36,10 @@ const Navbar = () => {
 
   return (
     <div className='fixed top-0 left-0 w-full md:bg-transparent bg-opacity-90 backdrop-blur-md z-50 '>
-        <div className="max-w-[1300px] mx-auto  flex justify-between text-gray-300 text-xl items-center px-12 h-20 ">
+        <div className="max-w-[1300px] mx-auto  flex justify-between text-gray-300 text-xl items-center px-12 h-20  border-b  border-slate-800">
 
           {/* logo */}
-          <Link to="." className='text-xl font-bold text-transparent bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text opacity-80 hover:opacity-100'>Aaron</Link>
+          <Link to="." className='text-xl font-bold text-transparent bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text opacity-80 hover:opacity-100 z-50'>Aaron</Link>
 
            {/* desktop menu */}
           <ul className='hidden md:flex gap-10 z-10 cursor-pointer text-base '>
@@ -63,7 +63,7 @@ const Navbar = () => {
           </ul>
          
           {/* toogle button */}
-          <div className="md:hidden z-50 text-gray-200"       
+          <div className="block md:hidden z-50 text-gray-200"       
             onClick={toggleNav}>
               {nav ? 
               <AiOutlineClose size={30}/>:
@@ -76,9 +76,9 @@ const Navbar = () => {
           initial={false}
           animate={nav ? 'open':'closed'}
           variants={menuVariants}
-          className='fixed left-0 top-0 w-full min-h-screen  z-40'
+          className='fixed left-0 top-0 w-full min-h-screen  bg-black/95  backdrop-blur-md'
           >
-          <ul className="font-semibold text-4xl space-y-8 mt-20  py-5 text-center  bg-[#190b1f] bg-opacity-90 backdrop-blur-md z-50">
+          <ul className="font-semibold text-2xl space-y-8 mt-20  py-5 text-center ">
 
           {
               links.map((link,index)=>{
